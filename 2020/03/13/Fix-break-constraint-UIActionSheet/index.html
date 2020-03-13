@@ -17,19 +17,21 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>Archives | Vien&#39;s Blog</title>
+  <title>fix break constraint uiactionsheet | Vien&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Save knowledge everyday">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vien&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Add an extension and call it before present. 1234567891011actionSheetController.pruneNegativeWidthConstraints()extension UIAlertController &amp;#123;    func pruneNegativeWidthConstraints() &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fix break constraint UIActionSheet">
+<meta property="og:url" content="http://yoursite.com/2020/03/13/Fix-break-constraint-UIActionSheet/index.html">
 <meta property="og:site_name" content="Vien&#39;s Blog">
-<meta property="og:description" content="Save knowledge everyday">
+<meta property="og:description" content="Add an extension and call it before present. 1234567891011actionSheetController.pruneNegativeWidthConstraints()extension UIAlertController &amp;#123;    func pruneNegativeWidthConstraints() &amp;#123;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-13T08:13:54.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:42:57.792Z">
 <meta property="article:author" content="Vien Vu">
 <meta name="twitter:card" content="summary">
   
@@ -95,7 +97,7 @@ var themeMenus = {};
 </script>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   <header id="allheader" class="site-header" role="banner">
@@ -173,216 +175,72 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>There are 2 posts in total till now.</span></blockquote>
-
-
-
-
-	<!-- 完全显示 -->
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2020" class="archive-year">2020</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2020/03/13/first-post/" class="archive-article-date">
-		  <time datetime="2020-03-13T09:14:35.000Z" itemprop="datePublished">Mar 13, 2020</time>
-	  </a>
-      
+          <section id="main" style="float:none;"><article id="post-Fix-break-constraint-UIActionSheet" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/first-post/">first-post</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Fix break constraint UIActionSheet
     </h1>
   
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2020/03/13/Fix-break-constraint-UIActionSheet/" class="archive-article-date">
-		  <time datetime="2020-03-13T08:13:54.000Z" itemprop="datePublished">Mar 13, 2020</time>
-	  </a>
+      </header>
+    
+    <div class="article-meta">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/Fix-break-constraint-UIActionSheet/">Fix break constraint UIActionSheet</a>
-    </h1>
-  
+	Posted on <a href="/2020/03/13/Fix-break-constraint-UIActionSheet/" class="article-date">
+	  <time datetime="2020-03-13T08:13:54.000Z" itemprop="datePublished">March 13, 2020</time>
+	</a>
 
-    </header>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Add an extension and call it before present.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">actionSheetController.pruneNegativeWidthConstraints()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIAlertController</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pruneNegativeWidthConstraints</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> subView <span class="keyword">in</span> <span class="keyword">self</span>.view.subviews &#123;</span><br><span class="line">            <span class="keyword">for</span> constraint <span class="keyword">in</span> subView.constraints <span class="keyword">where</span> constraint.debugDescription.<span class="built_in">contains</span>(<span class="string">"width == - 16"</span>) &#123;</span><br><span class="line">                subView.removeConstraint(constraint)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/13/first-post/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          first-post
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
 </article>
-	
 
-	
-		</div></section>
-	
+<!-- Table of Contents -->
 
-
-
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav">None</ol>
+    
+    </div>
+  </aside>
 </section>
-          <aside id="sidebar">
-  
-    <div class="widget-wrap" style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 75%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 42px;" placeholder=" Search…" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="Search">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Connect With Us</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-     			  <li><a href="https://github.com/vienvu89" target="_blank" rel="noopener" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-            <li><a href="mailto:lamvienbk@gmail.com?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" target="_blank" rel="noopener" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" target="_blank" rel="noopener" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" target="_blank" rel="noopener" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" target="_blank" rel="noopener" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" target="_blank" rel="noopener" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" target="_blank" rel="noopener" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>Recent Posts</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2020/03/13/first-post/">first-post</a></h6>
-              <span>March 13, 2020</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2020/03/13/Fix-break-constraint-UIActionSheet/">Fix break constraint UIActionSheet</a></h6>
-              <span>March 13, 2020</span>
-            </div>
-
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
         
       </div>
       <footer id="footer" class="site-footer">

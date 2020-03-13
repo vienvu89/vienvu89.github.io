@@ -218,6 +218,50 @@ var themeMenus = {};
     
 
   
+    <article id="post-Fix-break-constraint-UIActionSheet"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/13/Fix-break-constraint-UIActionSheet/">Fix break constraint UIActionSheet</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2020/03/13/Fix-break-constraint-UIActionSheet/" class="article-date">
+	  <time datetime="2020-03-13T08:13:54.000Z" itemprop="datePublished">March 13, 2020</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Add an extension and call it before present.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">actionSheetController.pruneNegativeWidthConstraints()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIAlertController</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pruneNegativeWidthConstraints</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> subView <span class="keyword">in</span> <span class="keyword">self</span>.view.subviews &#123;</span><br><span class="line">            <span class="keyword">for</span> constraint <span class="keyword">in</span> subView.constraints <span class="keyword">where</span> constraint.debugDescription.<span class="built_in">contains</span>(<span class="string">"width == - 16"</span>) &#123;</span><br><span class="line">                subView.removeConstraint(constraint)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
 
 
 </section>
@@ -329,6 +373,18 @@ var themeMenus = {};
 
           </li>
         
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2020/03/13/Fix-break-constraint-UIActionSheet/">Fix break constraint UIActionSheet</a></h6>
+              <span>March 13, 2020</span>
+            </div>
+
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -347,7 +403,7 @@ var themeMenus = {};
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
