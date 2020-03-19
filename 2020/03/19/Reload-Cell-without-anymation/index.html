@@ -17,25 +17,28 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>dynamic change the app icon | Vien&#39;s Blog</title>
+  <title>reload cell without anymation | Vien&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="iOS" />
+  <meta name="keywords" content="SwiftAnimationCollectionViewTableView" />
   
   
   
   
-  <meta name="description" content="From iOS 10.3 Apple had added:   1&gt;var supportsAlternateIcons: Bool A Boolean value indicating whether the app is allowed to change its icon. 1&gt;var alternateIconName: String? The name of the ico">
+  <meta name="description" content="Sometimes, the collectionView or tabelView has the dynamic cell’s height can flickers while reloading cells individually.We can use this code to avoid it:  123UIView.performWithoutAnimation &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dynamic change the App Icon">
-<meta property="og:url" content="http://yoursite.com/2020/03/16/Dynamic-change-the-App-Icon/index.html">
+<meta property="og:title" content="Reload Cell without anymation">
+<meta property="og:url" content="http://yoursite.com/2020/03/19/Reload-Cell-without-anymation/index.html">
 <meta property="og:site_name" content="Vien&#39;s Blog">
-<meta property="og:description" content="From iOS 10.3 Apple had added:   1&gt;var supportsAlternateIcons: Bool A Boolean value indicating whether the app is allowed to change its icon. 1&gt;var alternateIconName: String? The name of the ico">
+<meta property="og:description" content="Sometimes, the collectionView or tabelView has the dynamic cell’s height can flickers while reloading cells individually.We can use this code to avoid it:  123UIView.performWithoutAnimation &amp;#123;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-16T16:16:39.000Z">
-<meta property="article:modified_time" content="2020-03-19T07:20:54.937Z">
+<meta property="article:published_time" content="2020-03-19T07:18:56.000Z">
+<meta property="article:modified_time" content="2020-03-19T07:20:54.936Z">
 <meta property="article:author" content="Vien Vu">
-<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="Swift">
+<meta property="article:tag" content="Animation">
+<meta property="article:tag" content="CollectionView">
+<meta property="article:tag" content="TableView">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Vien&#39;s Blog" type="application/atom+xml">
@@ -178,7 +181,7 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Dynamic-change-the-App-Icon" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Reload-Cell-without-anymation" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -186,7 +189,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Dynamic change the App Icon
+      Reload Cell without anymation
     </h1>
   
 
@@ -194,26 +197,16 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2020/03/16/Dynamic-change-the-App-Icon/" class="article-date">
-	  <time datetime="2020-03-16T16:16:39.000Z" itemprop="datePublished">March 16, 2020</time>
+	Posted on <a href="/2020/03/19/Reload-Cell-without-anymation/" class="article-date">
+	  <time datetime="2020-03-19T07:18:56.000Z" itemprop="datePublished">March 19, 2020</time>
 	</a>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>From iOS 10.3 Apple had added: </p>
-<blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">var</span> supportsAlternateIcons: <span class="type">Bool</span></span><br></pre></td></tr></table></figure>
-<p>A Boolean value indicating whether the app is allowed to change its icon.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">var</span> alternateIconName: <span class="type">String?</span></span><br></pre></td></tr></table></figure>
-<p>The name of the icon being displayed for the app.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">func</span> <span class="title">setAlternateIconName</span><span class="params">(String?, completionHandler: <span class="params">(<span class="params">(Error?)</span></span></span></span> -&gt; <span class="type">Void</span>)?)</span><br></pre></td></tr></table></figure>
-<p>Changes the app’s icon.</p>
-</blockquote>
-<p>3 things will allow us to change the App Icon dynamic.</p>
-<p>We can change the icon only if the value of the <code>supportsAlternateIcons</code> property is <code>true</code>.<br>We must declare our app’s primary and alternate icons using the CFBundleIcons key of our app’s Info.plist file.<br>We can check keys here <a href="url">https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-102043</a></p>
-<p>Reference: <a href="url">https://medium.com/ios-os-x-development/dynamically-change-the-app-icon-7d4bece820d2</a></p>
+        <p>Sometimes, the collectionView or tabelView has the dynamic cell’s height can flickers while reloading cells individually.<br>We can use this code to avoid it: </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIView</span>.performWithoutAnimation &#123;</span><br><span class="line">      <span class="keyword">self</span>.tableView.reloadRows(at: [indexPath], with: .<span class="keyword">none</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -221,7 +214,7 @@ var themeMenus = {};
       
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CollectionView/" rel="tag">CollectionView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TableView/" rel="tag">TableView</a></li></ul>
 
       
             
@@ -232,19 +225,10 @@ var themeMenus = {};
     
 <nav id="article-nav">
   
-    <a href="/2020/03/18/UIStackView-Bug/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          UIStackView Bug
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/13/Fix-break-constraint-UIActionSheet/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/03/18/UIStackView-Bug/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Fix break constraint UIActionSheet</div>
+      <div class="article-nav-title">UIStackView Bug</div>
     </a>
   
 </nav>

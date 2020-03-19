@@ -17,7 +17,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>Vien&#39;s Blog</title>
+  <title>tag: animation | Vien&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -26,7 +26,7 @@
   <meta name="description" content="Save knowledge everyday">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vien&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Animation/index.html">
 <meta property="og:site_name" content="Vien&#39;s Blog">
 <meta property="og:description" content="Save knowledge everyday">
 <meta property="og:locale" content="en_US">
@@ -175,209 +175,38 @@ var themeMenus = {};
         
           <section id="main">
   
-    <article id="post-Reload-Cell-without-anymation"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+  
+  
     
     
-      <header class="article-header">
-        
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2020" class="archive-year">2020</a></h1>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+
+      <a href="/2020/03/19/Reload-Cell-without-anymation/" class="archive-article-date">
+		  <time datetime="2020-03-19T07:18:56.000Z" itemprop="datePublished">Mar 19, 2020</time>
+	  </a>
+      
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/03/19/Reload-Cell-without-anymation/">Reload Cell without anymation</a>
+      <a class="archive-article-title" href="/2020/03/19/Reload-Cell-without-anymation/">Reload Cell without anymation</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2020/03/19/Reload-Cell-without-anymation/" class="article-date">
-	  <time datetime="2020-03-19T07:18:56.000Z" itemprop="datePublished">March 19, 2020</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Sometimes, the collectionView or tabelView has the dynamic cell’s height can flickers while reloading cells individually.<br>We can use this code to avoid it: </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIView</span>.performWithoutAnimation &#123;</span><br><span class="line">      <span class="keyword">self</span>.tableView.reloadRows(at: [indexPath], with: .<span class="keyword">none</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CollectionView/" rel="tag">CollectionView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TableView/" rel="tag">TableView</a></li></ul>
-
-      
-            
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-<!-- Table of Contents -->
-
-    
-
   
-    <article id="post-UIStackView-Bug"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/03/18/UIStackView-Bug/">UIStackView Bug</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2020/03/18/UIStackView-Bug/" class="article-date">
-	  <time datetime="2020-03-18T04:34:01.000Z" itemprop="datePublished">March 18, 2020</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Sometimes you set items in <code>UIStackView</code> and it doesn’t work.<br>The bug is that hiding and showing views in a stack view is cumulative. Weird Apple bug. If you hide a view in a stack view twice, you need to show it twice to get it back.<br><a href="url">http://www.openradar.me/25087688</a></p>
-<p>To fix this issue you can use the following extension:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIView</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> isHiddenInStackView: <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> isHidden</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> isHidden != newValue &#123;</span><br><span class="line">                isHidden = newValue</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>and use:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stackView.subviews[someIndex].isHiddenInStackView = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-Dynamic-change-the-App-Icon"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/03/16/Dynamic-change-the-App-Icon/">Dynamic change the App Icon</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2020/03/16/Dynamic-change-the-App-Icon/" class="article-date">
-	  <time datetime="2020-03-16T16:16:39.000Z" itemprop="datePublished">March 16, 2020</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>From iOS 10.3 Apple had added: </p>
-<blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">var</span> supportsAlternateIcons: <span class="type">Bool</span></span><br></pre></td></tr></table></figure>
-<p>A Boolean value indicating whether the app is allowed to change its icon.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">var</span> alternateIconName: <span class="type">String?</span></span><br></pre></td></tr></table></figure>
-<p>The name of the icon being displayed for the app.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">func</span> <span class="title">setAlternateIconName</span><span class="params">(String?, completionHandler: <span class="params">(<span class="params">(Error?)</span></span></span></span> -&gt; <span class="type">Void</span>)?)</span><br></pre></td></tr></table></figure>
-<p>Changes the app’s icon.</p>
-</blockquote>
-<p>3 things will allow us to change the App Icon dynamic.</p>
-<p>We can change the icon only if the value of the <code>supportsAlternateIcons</code> property is <code>true</code>.<br>We must declare our app’s primary and alternate icons using the CFBundleIcons key of our app’s Info.plist file.<br>We can check keys here <a href="url">https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-102043</a></p>
-<p>Reference: <a href="url">https://medium.com/ios-os-x-development/dynamically-change-the-app-icon-7d4bece820d2</a></p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
-  
-    <article id="post-Fix-break-constraint-UIActionSheet"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/03/13/Fix-break-constraint-UIActionSheet/">Fix break constraint UIActionSheet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2020/03/13/Fix-break-constraint-UIActionSheet/" class="article-date">
-	  <time datetime="2020-03-13T08:13:54.000Z" itemprop="datePublished">March 13, 2020</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Add an extension and call it before present.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">actionSheetController.pruneNegativeWidthConstraints()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIAlertController</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pruneNegativeWidthConstraints</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> subView <span class="keyword">in</span> <span class="keyword">self</span>.view.subviews &#123;</span><br><span class="line">            <span class="keyword">for</span> constraint <span class="keyword">in</span> subView.constraints <span class="keyword">where</span> constraint.debugDescription.<span class="built_in">contains</span>(<span class="string">"width == - 16"</span>) &#123;</span><br><span class="line">                subView.removeConstraint(constraint)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-    
-
+    </div></section>
   
 
 
